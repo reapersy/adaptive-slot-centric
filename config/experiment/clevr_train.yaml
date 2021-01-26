@@ -1,1 +1,2 @@
-# @package _g
+# @package _global_
+dataset_name: clevr_train
