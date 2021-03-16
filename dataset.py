@@ -19,4 +19,7 @@ class ClevrDataset(torch.utils.data.Dataset):
         self.resize = torchvision.transforms.Resize((opt.image_height,opt.image_width))
         self.resize_mask = torchvision.transforms.Resize((opt.image_height,opt.image_width),torchvision.transforms.InterpolationMode.NEAREST)
 
- 
+    def __len__(self):
+        return len(self.all_files)
+
+    def __getitem__(self, i
