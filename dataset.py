@@ -16,4 +16,4 @@ class ClevrDataset(torch.utils.data.Dataset):
         root_file = opt.root_folder
         self.all_files = glob.glob(f'{root_file}/clevr_train/*')
 
-        se
+        self.resize = torchvision.transforms.Resize((opt.image_height,opt.image_width
