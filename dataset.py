@@ -10,4 +10,7 @@ st = ipdb.set_trace
 import torch
 import time
 
-class ClevrDataset(torch.utils.d
+class ClevrDataset(torch.utils.data.Dataset):
+    def __init__(self, opt):
+        self.opt = opt
+        root_file = opt.root
