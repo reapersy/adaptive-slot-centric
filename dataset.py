@@ -22,4 +22,8 @@ class ClevrDataset(torch.utils.data.Dataset):
     def __len__(self):
         return len(self.all_files)
 
-    def __getitem__(self, i
+    def __getitem__(self, idx):
+        if self.opt.overfit:
+            idx = 0
+
+        file_val 
