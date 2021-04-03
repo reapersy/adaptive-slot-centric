@@ -26,4 +26,5 @@ class ClevrDataset(torch.utils.data.Dataset):
         if self.opt.overfit:
             idx = 0
 
-        file_val 
+        file_val = self.all_files[idx]
+        pickled_file = pickle.load(open(file_val,'rb
