@@ -29,4 +29,6 @@ class ClevrDataset(torch.utils.data.Dataset):
         file_val = self.all_files[idx]
         pickled_file = pickle.load(open(file_val,'rb'))
         
-        rgb_val = torch.from_numpy(pickled_file['image']).sque
+        rgb_val = torch.from_numpy(pickled_file['image']).squeeze().float()
+        images = rgb_val / 256.0 
+        # Normalize to [0, 1
