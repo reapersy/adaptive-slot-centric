@@ -32,4 +32,7 @@ class ClevrDataset(torch.utils.data.Dataset):
         rgb_val = torch.from_numpy(pickled_file['image']).squeeze().float()
         images = rgb_val / 256.0 
         # Normalize to [0, 1] range.
-        gt_mask_val = torch.from_numpy(np.argmax(pickled_file['m
+        gt_mask_val = torch.from_numpy(np.argmax(pickled_file['mask'].squeeze(),0))
+        
+        images = images.permute(2,0,1).unsqueeze(0)
+        i
