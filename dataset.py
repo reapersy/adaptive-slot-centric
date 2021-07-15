@@ -35,4 +35,5 @@ class ClevrDataset(torch.utils.data.Dataset):
         gt_mask_val = torch.from_numpy(np.argmax(pickled_file['mask'].squeeze(),0))
         
         images = images.permute(2,0,1).unsqueeze(0)
-        i
+        images = self.resize(images)
+        gt_mask_val = self.resize_mask(gt_ma
