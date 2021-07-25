@@ -42,4 +42,6 @@ class ClevrDataset(torch.utils.data.Dataset):
         images = images.squeeze()
         gt_mask_val = gt_mask_val.squeeze()
         max_objs = gt_mask_val.max()
-  
+        
+        gt_indices = torch.zeros(self.opt.num_slots)
+        gt_indices[:max_objs
