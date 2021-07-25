@@ -36,4 +36,8 @@ class ClevrDataset(torch.utils.data.Dataset):
         
         images = images.permute(2,0,1).unsqueeze(0)
         images = self.resize(images)
-        gt_mask_val = self.resize_mask(gt_ma
+        gt_mask_val = self.resize_mask(gt_mask_val.unsqueeze(0))
+        
+        
+        images = images.squeeze()
+        gt
