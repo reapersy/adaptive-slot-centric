@@ -44,4 +44,5 @@ class ClevrDataset(torch.utils.data.Dataset):
         max_objs = gt_mask_val.max()
         
         gt_indices = torch.zeros(self.opt.num_slots)
-        gt_indices[:max_objs
+        gt_indices[:max_objs] = 1.0
+        gt_mask_val = F.one_hot(gt_mask_val, self.opt.num_slots
