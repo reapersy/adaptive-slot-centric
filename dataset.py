@@ -49,4 +49,6 @@ class ClevrDataset(torch.utils.data.Dataset):
 
         return images, gt_mask_val , gt_indices
 
-class ClevrTexDatase
+class ClevrTexDataset(torch.utils.data.Dataset):
+    def __init__(self, opt):
+        
