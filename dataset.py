@@ -51,4 +51,6 @@ class ClevrDataset(torch.utils.data.Dataset):
 
 class ClevrTexDataset(torch.utils.data.Dataset):
     def __init__(self, opt):
-        
+        self.opt = opt
+        root_file = opt.root_folder
+        self.a
