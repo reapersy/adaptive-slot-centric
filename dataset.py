@@ -53,4 +53,5 @@ class ClevrTexDataset(torch.utils.data.Dataset):
     def __init__(self, opt):
         self.opt = opt
         root_file = opt.root_folder
-        self.a
+        self.all_files = glob.glob(f'{root_file}/clevr_tex/*')
+        self.resize = torchvision.transfo
