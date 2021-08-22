@@ -64,4 +64,5 @@ class ClevrTexDataset(torch.utils.data.Dataset):
         if self.opt.overfit:
             idx = 0
         
-      
+        if self.opt.specific_example != 'None':
+            idx = int(self.opt.specific_example
