@@ -65,4 +65,7 @@ class ClevrTexDataset(torch.utils.data.Dataset):
             idx = 0
         
         if self.opt.specific_example != 'None':
-            idx = int(self.opt.specific_example
+            idx = int(self.opt.specific_example)
+        
+        file_val = self.all_files[idx]
+        pickled_file = pickle.l
