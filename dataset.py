@@ -68,4 +68,7 @@ class ClevrTexDataset(torch.utils.data.Dataset):
             idx = int(self.opt.specific_example)
         
         file_val = self.all_files[idx]
-        pickled_file = pickle.l
+        pickled_file = pickle.load(open(file_val,'rb'))
+        
+        
+        rgb_val = torch.from_
