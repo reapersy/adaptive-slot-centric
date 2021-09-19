@@ -72,4 +72,6 @@ class ClevrTexDataset(torch.utils.data.Dataset):
         
         
         rgb_val = torch.from_numpy(pickled_file['image']).squeeze().float()
-        images = rgb_val / 
+        images = rgb_val / 256.0 
+        # Normalize to [0, 1] range.
+        gt_mask_val = torch.fro
