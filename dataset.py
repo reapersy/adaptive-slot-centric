@@ -71,4 +71,5 @@ class ClevrTexDataset(torch.utils.data.Dataset):
         pickled_file = pickle.load(open(file_val,'rb'))
         
         
-        rgb_val = torch.from_
+        rgb_val = torch.from_numpy(pickled_file['image']).squeeze().float()
+        images = rgb_val / 
