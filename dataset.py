@@ -76,4 +76,5 @@ class ClevrTexDataset(torch.utils.data.Dataset):
         # Normalize to [0, 1] range.
         gt_mask_val = torch.from_numpy(np.argmax(pickled_file['mask'].squeeze(),0))
         
-        images = 
+        images = images.permute(2,0,1).unsqueeze(0)
+        images = self.resize(images)
