@@ -81,3 +81,6 @@ class ClevrTexDataset(torch.utils.data.Dataset):
         
         gt_mask_val = self.resize_mask(gt_mask_val.unsqueeze(0))
         
+        
+        images = images.squeeze()
+        gt_mask_val = 
