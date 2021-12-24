@@ -88,4 +88,6 @@ class ClevrTexDataset(torch.utils.data.Dataset):
 
         gt_indices = torch.zeros(self.opt.num_slots)
         gt_indices[:max_objs] = 1.0
-        gt_mas
+        gt_mask_val = F.one_hot(gt_mask_val, self.opt.num_slots).permute(2,0,1)
+
+        return im
