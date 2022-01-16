@@ -95,4 +95,5 @@ class ClevrTexDataset(torch.utils.data.Dataset):
 
 
 def get_dataloader(opt, dataset):
-    # Im
+    # Improve reproducibility in dataloader.
+    data_loader = torch.uti
