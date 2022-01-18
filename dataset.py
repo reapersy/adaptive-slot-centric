@@ -99,4 +99,7 @@ def get_dataloader(opt, dataset):
     data_loader = torch.utils.data.DataLoader(
         dataset,
         batch_size=opt.batch_size,
-        drop_last
+        drop_last=True,
+        shuffle=True,
+        num_workers=opt.num_workers,
+        persi
