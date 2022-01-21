@@ -102,4 +102,8 @@ def get_dataloader(opt, dataset):
         drop_last=True,
         shuffle=True,
         num_workers=opt.num_workers,
-        persi
+        persistent_workers=opt.persistent_worker,
+    )
+    
+    iterator = iter(data_loader)
+ 
