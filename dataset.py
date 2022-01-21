@@ -110,4 +110,7 @@ def get_dataloader(opt, dataset):
 
 
 def get_data(opt):
-    if opt.dataset_name == "clevr
+    if opt.dataset_name == "clevr_tex":
+        dataset = ClevrTexDataset(opt)         
+    else:
+        dataset = Clevr
