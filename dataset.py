@@ -106,4 +106,8 @@ def get_dataloader(opt, dataset):
     )
     
     iterator = iter(data_loader)
- 
+    return data_loader, iterator
+
+
+def get_data(opt):
+    if opt.dataset_name == "clevr
