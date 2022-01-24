@@ -115,4 +115,7 @@ def get_data(opt):
     else:
         dataset = ClevrDataset(opt)
     loader, iterator = get_dataloader(opt, dataset)
-    return loader,
+    return loader, iterator
+
+def get_data_tta(opt):
+    if opt.dataset_name == "clevr_tex"
