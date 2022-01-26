@@ -121,4 +121,7 @@ def get_data_tta(opt):
     if opt.dataset_name == "clevr_tex":
         dataset = ClevrTexDataset(opt)
     else:
-        dataset =
+        dataset = ClevrDataset(opt)
+    return dataset
+
+def get_input(opt, iterator, train_loader):
