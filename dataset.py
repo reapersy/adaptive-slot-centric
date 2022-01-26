@@ -128,4 +128,6 @@ def get_input(opt, iterator, train_loader):
     time_init = time.time()
     try:
         input = next(iterator)
-    except S
+    except StopIteration:
+        iterator = iter(train_loader)
+        i
