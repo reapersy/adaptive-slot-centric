@@ -125,3 +125,7 @@ def get_data_tta(opt):
     return dataset
 
 def get_input(opt, iterator, train_loader):
+    time_init = time.time()
+    try:
+        input = next(iterator)
+    except S
