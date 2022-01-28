@@ -130,4 +130,6 @@ def get_input(opt, iterator, train_loader):
         input = next(iterator)
     except StopIteration:
         iterator = iter(train_loader)
-        i
+        input = next(iterator)
+        print("stop loading")
+    time_init = time.time()
