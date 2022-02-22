@@ -133,3 +133,7 @@ def get_input(opt, iterator, train_loader):
         input = next(iterator)
         print("stop loading")
     time_init = time.time()
+    image, gt_mask, gt_indices = input 
+    
+    
+    image = image.to(opt.dev
