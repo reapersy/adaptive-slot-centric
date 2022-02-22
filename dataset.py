@@ -136,4 +136,6 @@ def get_input(opt, iterator, train_loader):
     image, gt_mask, gt_indices = input 
     
     
-    image = image.to(opt.dev
+    image = image.to(opt.device)
+    gt_mask = gt_mask.to(opt.device)
+    gt_indices = gt_indices.to(opt.de
