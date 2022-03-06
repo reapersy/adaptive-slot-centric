@@ -142,4 +142,7 @@ def get_input(opt, iterator, train_loader):
     
     feed_dict = {}
     feed_dict["image"] = image
-    feed_dict["gt_mask"]
+    feed_dict["gt_mask"] = gt_mask
+    feed_dict["gt_indices"] = gt_indices
+    
+    return  feed_dict
