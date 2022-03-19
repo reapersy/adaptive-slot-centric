@@ -8,4 +8,7 @@ class HungarianMatcher(nn.Module):
     """This class computes an assignment between the targets and the predictions of the network
     For efficiency reasons, the targets don't include the no_object. Because of this, in general,
     there are more predictions than targets. In this case, we do a 1-to-1 matching of the best predictions,
-    while the others are u
+    while the others are un-matched (and thus treated as non-objects).
+    """
+
+    def __init__(self, cost_cl
