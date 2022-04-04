@@ -28,4 +28,5 @@ class HungarianMatcher(nn.Module):
     def forward(self, outputs, targets, do_sigmoid = False, use_mm=False):
         """ Performs the matching
         Params:
-            outputs: This is a dict that contains at least these entrie
+            outputs: This is a dict that contains at least these entries:
+                 "pred_logits": Tensor of dim [batch_size, num_queries, num_classes]
