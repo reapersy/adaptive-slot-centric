@@ -37,4 +37,5 @@ class HungarianMatcher(nn.Module):
                  "boxes": Tensor of dim [num_target_boxes, 4] containing the target box coordinates
         Returns:
             A list of size batch_size, containing tuples of (index_i, index_j) where:
-                - index_i is the indices of the selected predictions (in ord
+                - index_i is the indices of the selected predictions (in order)
+                - index_j is the indices of the corresponding selected targets (in or
