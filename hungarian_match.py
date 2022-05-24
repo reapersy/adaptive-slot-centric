@@ -38,4 +38,6 @@ class HungarianMatcher(nn.Module):
         Returns:
             A list of size batch_size, containing tuples of (index_i, index_j) where:
                 - index_i is the indices of the selected predictions (in order)
-                - index_j is the indices of the corresponding selected targets (in or
+                - index_j is the indices of the corresponding selected targets (in order)
+            For each batch element, it holds:
+                len(ind
