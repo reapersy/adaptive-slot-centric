@@ -42,4 +42,7 @@ class HungarianMatcher(nn.Module):
             For each batch element, it holds:
                 len(index_i) = len(index_j) = min(num_queries, num_target_boxes)
         """
-  
+        # st()
+        if do_sigmoid:
+            outputs = torch.sigmoid(outputs)
+
