@@ -40,4 +40,6 @@ class HungarianMatcher(nn.Module):
                 - index_i is the indices of the selected predictions (in order)
                 - index_j is the indices of the corresponding selected targets (in order)
             For each batch element, it holds:
-                len(ind
+                len(index_i) = len(index_j) = min(num_queries, num_target_boxes)
+        """
+  
