@@ -46,3 +46,9 @@ class HungarianMatcher(nn.Module):
         if do_sigmoid:
             outputs = torch.sigmoid(outputs)
 
+
+        bs, num_queries = outputs.shape[:2]
+
+        # targets
+
+        # We
