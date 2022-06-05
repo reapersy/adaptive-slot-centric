@@ -59,4 +59,5 @@ class HungarianMatcher(nn.Module):
         # tgt_ids = torch.cat([v["labels"] for v in targets])
         tgt_bbox = targets.flatten(0,1)
 
-        # Compute the classification cos
+        # Compute the classification cost. Contrary to the loss, we don't use the NLL,
+        # but approximate it in 1
