@@ -56,4 +56,7 @@ class HungarianMatcher(nn.Module):
         out_bbox = outputs.flatten(0, 1)  # [batch_size * num_queries, 4]
 
         # Also concat the target labels and boxes
-        # tgt_ids = torch.cat([v["labels"]
+        # tgt_ids = torch.cat([v["labels"] for v in targets])
+        tgt_bbox = targets.flatten(0,1)
+
+        # Compute the classification cos
