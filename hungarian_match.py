@@ -68,4 +68,7 @@ class HungarianMatcher(nn.Module):
         if use_mm:
             cost_bbox = torch.cdist(out_bbox, tgt_bbox, p=2, compute_mode='use_mm_for_euclid_dist')
         else:
-            cost_bbox = torch.cdist(
+            cost_bbox = torch.cdist(out_bbox, tgt_bbox, p=1)
+
+        # Compute the giou cost betwen boxes
+     
