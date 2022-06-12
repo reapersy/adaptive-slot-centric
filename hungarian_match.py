@@ -65,4 +65,5 @@ class HungarianMatcher(nn.Module):
         # cost_class = -out_prob[:, tgt_ids]
         # st()
         # Compute the L1 cost between boxes
-    
+        if use_mm:
+            cost_bbox = torch.cdist(out_bbox, tgt_bbox, p=2,
