@@ -74,4 +74,5 @@ class HungarianMatcher(nn.Module):
         # cost_giou = -generalized_box_iou(box_cxcywh_to_xyxy(out_bbox), box_cxcywh_to_xyxy(tgt_bbox))
 
         # Final cost matrix
-        C = cost_
+        C = cost_bbox
+        # C = self.cost_bbox * cost_bbox + self.cost_class * cost_class + self.cost_giou * c
