@@ -75,4 +75,7 @@ class HungarianMatcher(nn.Module):
 
         # Final cost matrix
         C = cost_bbox
-        # C = self.cost_bbox * cost_bbox + self.cost_class * cost_class + self.cost_giou * c
+        # C = self.cost_bbox * cost_bbox + self.cost_class * cost_class + self.cost_giou * cost_giou
+        C = C.view(bs, num_queries, -1).cpu()
+
+        sizes = [len(
