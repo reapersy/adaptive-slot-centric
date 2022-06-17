@@ -78,4 +78,5 @@ class HungarianMatcher(nn.Module):
         # C = self.cost_bbox * cost_bbox + self.cost_class * cost_class + self.cost_giou * cost_giou
         C = C.view(bs, num_queries, -1).cpu()
 
-        sizes = [len(
+        sizes = [len(v) for v in targets]
+        indices = [linear_sum_assignment(c[i]) for i,
