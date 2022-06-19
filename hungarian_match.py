@@ -85,4 +85,7 @@ class HungarianMatcher(nn.Module):
 
 
 if __name__ == "__main__":
-    hungarianMatcher = HungarianM
+    hungarianMatcher = HungarianMatcher()
+    output = torch.randn(3,4,5)
+    target = torch.randn(3,4,5)
+    out_target = hungarian
