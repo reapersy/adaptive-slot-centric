@@ -88,4 +88,6 @@ if __name__ == "__main__":
     hungarianMatcher = HungarianMatcher()
     output = torch.randn(3,4,5)
     target = torch.randn(3,4,5)
-    out_target = hungarian
+    out_target = hungarianMatcher(output,target)
+    st()
+    print(value)
