@@ -80,4 +80,9 @@ class HungarianMatcher(nn.Module):
 
         sizes = [len(v) for v in targets]
         indices = [linear_sum_assignment(c[i]) for i, c in enumerate(C.split(sizes, -1))]
-        return [torch.as_tensor([i,j], dtype=torch.i
+        return [torch.as_tensor([i,j], dtype=torch.int64) for i, j in indices]
+
+
+
+if __name__ == "__main__":
+    hungarianMatcher = HungarianM
