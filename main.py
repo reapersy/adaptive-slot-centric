@@ -192,3 +192,34 @@ def train(opt, model, optimizer, train_iterator, train_loader, checkpoint):
         if step != 0 and step % opt.save_freq ==0:
             checkpoint.save_checkpoint(model, optimizer, step)
     checkpoint.save_checkpoint(model, optimizer, train_step)
+    return optimizer, step
+
+
+
+
+@hydra.main(config_path="config", config_name="config")
+def my_main(opt: DictConfig) -> None:
+    opt = parse_args(opt)
+
+
+    wandb.login()
+    wandb.init(project="slot-tta", config=opt)    
+
+    run_name = wandb.run.name
+    
+    opt.log_dir = f"{opt.cwd}/checkpoint/{run_name}"
+    os.makedirs(opt.log_dir, exist_ok=True)        
+
+    model, optimizer = model_utils.get_model_and_optimizer(opt)
+    
+    checkpointer = model_utils.ModelCheckpoint(opt.log_dir, keep=10)
+    
+    if opt.do_tta:
+        tta_dataset = dataset.get_data_tta(opt)
+        do_tta(opt, model, optimizer, tta_dataset)
+    else:
+        train_loader, train_iterator = dataset.get_data(opt)
+        train(opt, model, optimizer, train_iterator, train_loader, checkpointer)
+
+if __name__ == "__main__":
+    my_main()
