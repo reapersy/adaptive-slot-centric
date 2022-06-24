@@ -113,3 +113,82 @@ def do_tta(opt, model, optimizer, tta_dataset):
                     vis_dict["before_tta_mean_acc_fg"] = np.array(before_tta_acc_fg).mean()                                
                     vis_dict["after_tta_mean_acc"] = np.array(after_tta_acc).mean()
                     vis_dict["after_tta_mean_acc_fg"] = np.array(after_tta_acc_fg).mean()                                
+                    wandb.log(vis_dict, step=index_val)
+                
+                if opt.deep_tta_vis:
+                    min_loss = float(min(all_losses)) - 0.0025
+                    max_loss = float(max(all_losses)) + 0.0025
+
+                    min_acc = float(min(all_accs)) - 0.05
+                    max_acc = float(max(all_accs)) + 0.05
+
+                    all_losses = [float(i) for i in all_losses]
+                    all_accs = [float(i) for i in all_accs]
+                    all_steps = list(range(len(all_losses)))
+                    
+                    
+                    for tta_step in tqdm(range(len(all_losses))):
+                        # log reconstruction loss
+                        all_custom_losses = all_losses[:tta_step]
+                        all_custom_accs = all_accs[:tta_step]
+                        all_custom_steps = all_steps[:tta_step]
+
+                        plt.figure(dpi=250, figsize=(4.4, 3.8))
+                        plt.xlim(-5, 150)
+                        plt.ylim(min_loss,max_loss)
+                        plt.plot(all_custom_steps, all_custom_losses,  markersize=1,color='red')
+                        plt.xlabel('Test-time Adaptation Steps')
+                        plt.ylabel('Reconstruction Loss')
+                        os.makedirs(f'{folder_name}/loss_tta/', exist_ok=True)
+
+                        plt.tight_layout(pad=0)
+                        plt.savefig(f'{folder_name}/loss_tta/{tta_step:05d}_loss_tta.png', bbox_inches='tight')
+                        
+                        # log segmentation accuracy
+                        plt.figure(dpi=250, figsize=(4.4, 3.8))
+                        plt.xlim(-5, 150)
+                        plt.ylim(min_acc, max_acc)
+                        plt.plot(all_custom_steps, all_custom_accs,  markersize=1)
+                        plt.xlabel('Test-time Adaptation Steps')
+                        plt.ylabel('Segmentation Accuracy')
+                        os.makedirs(f'{folder_name}/seg_tta/', exist_ok=True)
+                        plt.tight_layout(pad=0)
+                        plt.savefig(f'{folder_name}/seg_tta/{tta_step:05d}_seg_tta.png', bbox_inches='tight')
+
+                all_losses = []
+                all_accs = []
+                
+        if opt.specific_example != "None":
+            break
+
+        model, optimizer = model_utils.get_model_and_optimizer(opt)
+    
+
+def train(opt, model, optimizer, train_iterator, train_loader, checkpoint):
+    start_time = time.time()
+
+    for step in tqdm(range(opt.training_steps + 1)):
+        vis_dict = {}
+        time_init = time.time()
+        
+        feed_dict = dataset.get_input(opt, train_iterator, train_loader)
+
+        optimizer, learning_rate = utils.update_learning_rate(optimizer, opt, step)            
+        
+            
+        feed_dict["learning_rate"] = learning_rate
+        loss, vis_dict = model(feed_dict, step)
+
+        
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+        
+        if step % opt.log_freq == 0:
+            vis_dict["learning_rate"] = learning_rate
+            wandb.log(vis_dict, step=step)
+        
+        if step != 0 and step % opt.save_freq ==0:
+            checkpoint.save_checkpoint(model, optimizer, step)
+    checkpoint.save_checkpoint(model, optimizer, train_step)
