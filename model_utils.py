@@ -11,4 +11,7 @@ def get_model_and_optimizer(opt):
     if opt.tta_optimizer == "adam":
         optimizer = torch.optim.Adam(model.parameters(), lr=opt.learning_rate)
     else:
-        optimizer = torch.optim.SGD(model.parameters(), lr=opt.learning_r
+        optimizer = torch.optim.SGD(model.parameters(), lr=opt.learning_rate, momentum=0.9)
+    
+    if opt.load_folder != "None":
+        print("Loading mod
