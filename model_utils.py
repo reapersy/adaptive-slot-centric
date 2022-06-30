@@ -14,4 +14,6 @@ def get_model_and_optimizer(opt):
         optimizer = torch.optim.SGD(model.parameters(), lr=opt.learning_rate, momentum=0.9)
     
     if opt.load_folder != "None":
-        print("Loading mod
+        print("Loading model from", opt.load_folder)
+        # st()
+        load_path = opt.cwd + "/"
