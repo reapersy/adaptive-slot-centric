@@ -16,4 +16,6 @@ def get_model_and_optimizer(opt):
     if opt.load_folder != "None":
         print("Loading model from", opt.load_folder)
         # st()
-        load_path = opt.cwd + "/"
+        load_path = opt.cwd + "/" + opt.load_folder
+        state_dict = torch.load(load_path)
+        model.loa
