@@ -20,4 +20,6 @@ def get_model_and_optimizer(opt):
         state_dict = torch.load(load_path)
         model.load_state_dict(state_dict["model"])    
         if opt.tta_optimizer == "adam":
- 
+            optimizer.load_state_dict(state_dict["optimizer"])
+
+    return model, 
