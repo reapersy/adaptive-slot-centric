@@ -22,4 +22,9 @@ def get_model_and_optimizer(opt):
         if opt.tta_optimizer == "adam":
             optimizer.load_state_dict(state_dict["optimizer"])
 
-    return model, 
+    return model, optimizer
+
+
+
+class ModelCheckpoint:
+    def __init__(self, save_path, keep=
