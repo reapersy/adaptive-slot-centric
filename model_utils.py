@@ -18,4 +18,6 @@ def get_model_and_optimizer(opt):
         # st()
         load_path = opt.cwd + "/" + opt.load_folder
         state_dict = torch.load(load_path)
-        model.loa
+        model.load_state_dict(state_dict["model"])    
+        if opt.tta_optimizer == "adam":
+ 
