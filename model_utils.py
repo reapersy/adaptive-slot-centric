@@ -27,4 +27,7 @@ def get_model_and_optimizer(opt):
 
 
 class ModelCheckpoint:
-    def __init__(self, save_path, keep=
+    def __init__(self, save_path, keep=3):
+        self.save_path = save_path
+        self.keep = keep
+        sel
