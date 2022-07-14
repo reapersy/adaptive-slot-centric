@@ -30,4 +30,7 @@ class ModelCheckpoint:
     def __init__(self, save_path, keep=3):
         self.save_path = save_path
         self.keep = keep
-        sel
+        self.checkpoints = []
+
+    def save_checkpoint(self, model, optimizer, train_step):
+        checkpo
