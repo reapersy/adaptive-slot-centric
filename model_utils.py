@@ -33,4 +33,6 @@ class ModelCheckpoint:
         self.checkpoints = []
 
     def save_checkpoint(self, model, optimizer, train_step):
-        checkpo
+        checkpoint = {
+            'epoch': train_step,
+            'model_state_dict': model.state_dict
