@@ -43,4 +43,7 @@ class ModelCheckpoint:
 
         # Save the checkpoint.
         torch.save(checkpoint, path)
-        print(f"Check
+        print(f"Checkpoint saved: {path}")
+
+        # Add the checkpoint.
+        self.checkpoints.appe
