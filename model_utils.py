@@ -41,4 +41,6 @@ class ModelCheckpoint:
 
         path = os.path.join(self.save_path, f'checkpoint_{train_step}.pt')
 
-        # Save th
+        # Save the checkpoint.
+        torch.save(checkpoint, path)
+        print(f"Check
