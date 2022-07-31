@@ -46,4 +46,6 @@ class ModelCheckpoint:
         print(f"Checkpoint saved: {path}")
 
         # Add the checkpoint.
-        self.checkpoints.appe
+        self.checkpoints.append(path)
+
+        # If there are more than `keep` checkpoints, remove the oldest one
