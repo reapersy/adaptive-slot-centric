@@ -48,4 +48,6 @@ class ModelCheckpoint:
         # Add the checkpoint.
         self.checkpoints.append(path)
 
-        # If there are more than `keep` checkpoints, remove the oldest one
+        # If there are more than `keep` checkpoints, remove the oldest one.
+        if len(self.checkpoints) > self.keep:
+            oldest_c
