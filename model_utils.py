@@ -51,4 +51,5 @@ class ModelCheckpoint:
         # If there are more than `keep` checkpoints, remove the oldest one.
         if len(self.checkpoints) > self.keep:
             oldest_checkpoint = self.checkpoints.pop(0)
-            os.remove(oldest_checkpoint
+            os.remove(oldest_checkpoint)
+            print(f"Checkpoint deleted: {oldest_checkpoint}")
