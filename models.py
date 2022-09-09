@@ -12,4 +12,6 @@ import ipdb
 st = ipdb.set_trace
 
 
-def build_grid_encoder(resolut
+def build_grid_encoder(resolution):
+    ranges = [np.linspace(0., 1., num=res) for res in resolution]
+    grid 
