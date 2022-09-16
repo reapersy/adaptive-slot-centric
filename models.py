@@ -19,4 +19,8 @@ def build_grid_encoder(resolution):
     grid = np.reshape(grid, [resolution[0], resolution[1], -1])
     grid = np.expand_dims(grid, axis=0)
     grid = grid.astype(np.float32)
-    ret
+    return torch.from_numpy(np.concatenate([grid, 1.0 - grid], axis=-1)).cuda()
+
+
+
+clas
