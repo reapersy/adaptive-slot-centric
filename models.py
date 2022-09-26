@@ -24,4 +24,6 @@ def build_grid_encoder(resolution):
 
 
 class SlotAttention(nn.Module):
-    def __init__(self, num_slots, dim, iters = 3,
+    def __init__(self, num_slots, dim, iters = 3, eps = 1e-8, hidden_dim = 128, pos_dims=0):
+        super().__init__()
+  
