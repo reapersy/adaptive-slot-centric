@@ -28,4 +28,7 @@ class SlotAttention(nn.Module):
         super().__init__()
         self.num_slots = num_slots
         self.iters = iters
-        self.eps =
+        self.eps = eps
+        self.scale = dim ** -0.5
+
+        self.slots_mu = nn.Parameter(torch.randn(1, 
