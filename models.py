@@ -35,4 +35,7 @@ class SlotAttention(nn.Module):
 
         self.feat_dim = dim
         self.to_q = nn.Linear(dim, dim)
-     
+        self.to_k = nn.Linear(dim, dim)
+
+
+        self.to_v = nn.Line
