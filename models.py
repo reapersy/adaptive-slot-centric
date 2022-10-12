@@ -38,4 +38,6 @@ class SlotAttention(nn.Module):
         self.to_k = nn.Linear(dim, dim)
 
 
-        self.to_v = nn.Line
+        self.to_v = nn.Linear(dim, dim)
+        self.gru = nn.GRUCell(dim, dim)
+        hidden_dim = max(dim, hi
