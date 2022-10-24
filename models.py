@@ -54,4 +54,7 @@ class SlotAttention(nn.Module):
     def forward(self, inputs):
         b, n, d = inputs.shape        
         
- 
+        slots = self.slots_mu.repeat([b,1,1])
+
+
+        inputs = self.norm_input(
