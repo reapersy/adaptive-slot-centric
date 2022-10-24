@@ -44,4 +44,6 @@ class SlotAttention(nn.Module):
         self.fc1 = nn.Linear(dim, hidden_dim)
         self.fc2 = nn.Linear(hidden_dim, dim)
         self.norm_pre_ff = nn.LayerNorm(dim)
-    
+        self.norm_slots  = nn.LayerNorm(dim)
+
+        self.norm_input  = nn.LayerNorm(dim)
