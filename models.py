@@ -47,3 +47,11 @@ class SlotAttention(nn.Module):
         self.norm_slots  = nn.LayerNorm(dim)
 
         self.norm_input  = nn.LayerNorm(dim)
+
+
+
+
+    def forward(self, inputs):
+        b, n, d = inputs.shape        
+        
+ 
