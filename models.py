@@ -60,4 +60,9 @@ class SlotAttention(nn.Module):
         inputs = self.norm_input(inputs)        
         k, v = self.to_k(inputs), self.to_v(inputs)
 
-        all_at
+        all_attn_slot = []
+        all_attn = []
+
+
+        for iter_num in range(self.iters):
+            s
