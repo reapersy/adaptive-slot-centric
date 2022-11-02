@@ -57,4 +57,7 @@ class SlotAttention(nn.Module):
         slots = self.slots_mu.repeat([b,1,1])
 
 
-        inputs = self.norm_input(
+        inputs = self.norm_input(inputs)        
+        k, v = self.to_k(inputs), self.to_v(inputs)
+
+        all_at
