@@ -68,4 +68,6 @@ class SlotAttention(nn.Module):
             slots_prev = slots
 
             slots = self.norm_slots(slots)
-            q = self.to_
+            q = self.to_q(slots)
+
+            dots = torch.einsum('bid,bjd->bij', q, k) * sel
