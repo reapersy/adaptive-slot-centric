@@ -65,4 +65,7 @@ class SlotAttention(nn.Module):
 
 
         for iter_num in range(self.iters):
-            s
+            slots_prev = slots
+
+            slots = self.norm_slots(slots)
+            q = self.to_
