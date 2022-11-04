@@ -73,4 +73,7 @@ class SlotAttention(nn.Module):
             dots = torch.einsum('bid,bjd->bij', q, k) * self.scale
 
             attn = dots.softmax(dim=1) + self.eps
-            attn_slot =
+            attn_slot = attn
+            attn = attn / attn.sum(dim=-1, keepdim=True)
+            
+           
