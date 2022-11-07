@@ -76,4 +76,8 @@ class SlotAttention(nn.Module):
             attn_slot = attn
             attn = attn / attn.sum(dim=-1, keepdim=True)
             
-           
+            all_attn.append(attn)
+
+            all_attn_slot.append(attn_slot)
+
+            
