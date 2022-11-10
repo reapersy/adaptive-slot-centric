@@ -86,4 +86,5 @@ class SlotAttention(nn.Module):
                 slots_prev.reshape(-1, d)
             )
 
-            slots = slo
+            slots = slots.reshape(b, -1, d)
+            slots = slots + self.fc2(F.relu(self.
