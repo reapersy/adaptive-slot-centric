@@ -91,4 +91,5 @@ class SlotAttention(nn.Module):
         return slots, all_attn, all_attn_slot
 
 
-"
+"""Adds soft positional embedding with learnable projection."""
+class SoftPositionEmbed(n
