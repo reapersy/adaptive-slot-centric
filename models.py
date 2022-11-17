@@ -92,4 +92,5 @@ class SlotAttention(nn.Module):
 
 
 """Adds soft positional embedding with learnable projection."""
-class SoftPositionEmbed(n
+class SoftPositionEmbed(nn.Module):
+    def __init__(self, hidden_size, resolution
