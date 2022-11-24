@@ -95,4 +95,6 @@ class SlotAttention(nn.Module):
 class SoftPositionEmbed(nn.Module):
     def __init__(self, hidden_size, resolution):
         """Builds the soft position embedding layer.
-  
+        Args:
+        hidden_size: Size of input feature dimension.
+        resolution: Tu
