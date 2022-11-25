@@ -103,4 +103,6 @@ class SoftPositionEmbed(nn.Module):
         self.embedding = nn.Linear(4, hidden_size, bias=True)
         self.grid = build_grid_encoder(resolution)
 
-  
+    def forward(self, inputs):
+        grid = self.embedding(self.grid)
+        re
