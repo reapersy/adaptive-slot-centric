@@ -97,4 +97,6 @@ class SoftPositionEmbed(nn.Module):
         """Builds the soft position embedding layer.
         Args:
         hidden_size: Size of input feature dimension.
-        resolution: Tu
+        resolution: Tuple of integers specifying width and height of grid.
+        """
+        super().__
