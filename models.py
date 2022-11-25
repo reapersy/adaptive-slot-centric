@@ -111,4 +111,5 @@ class SoftPositionEmbed(nn.Module):
 class Encoder(nn.Module):
     def __init__(self, resolution, hid_dim, in_dim):
         super().__init__()
-        self.conv1 = nn.Conv2d(in_dim, h
+        self.conv1 = nn.Conv2d(in_dim, hid_dim, 5, padding = 2)
+        self.conv2 = nn.Conv2d(hid_dim, hid_dim
