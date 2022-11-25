@@ -105,4 +105,8 @@ class SoftPositionEmbed(nn.Module):
 
     def forward(self, inputs):
         grid = self.embedding(self.grid)
-        re
+        return inputs + grid
+
+
+class Encoder(nn.Module):
+    def __init__(self, resolution, hid_
