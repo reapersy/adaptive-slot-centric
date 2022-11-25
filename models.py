@@ -100,4 +100,7 @@ class SoftPositionEmbed(nn.Module):
         resolution: Tuple of integers specifying width and height of grid.
         """
         super().__init__()
-        self.embedding = nn.Linear(4, hidden_size, bi
+        self.embedding = nn.Linear(4, hidden_size, bias=True)
+        self.grid = build_grid_encoder(resolution)
+
+  
