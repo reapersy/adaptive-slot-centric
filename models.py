@@ -99,4 +99,5 @@ class SoftPositionEmbed(nn.Module):
         hidden_size: Size of input feature dimension.
         resolution: Tuple of integers specifying width and height of grid.
         """
-        super().__
+        super().__init__()
+        self.embedding = nn.Linear(4, hidden_size, bi
