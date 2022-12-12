@@ -117,4 +117,9 @@ class Encoder(nn.Module):
         self.conv4 = nn.Conv2d(hid_dim, hid_dim, 5, padding = 2)              
         self.encoder_pos = SoftPositionEmbed(hid_dim, resolution)
 
-    def forward
+    def forward(self, x):
+        x = self.conv1(x)
+        x = F.relu(x)
+        x = self.conv2(x)
+        x = F.relu(x)
+     
