@@ -122,4 +122,7 @@ class Encoder(nn.Module):
         x = F.relu(x)
         x = self.conv2(x)
         x = F.relu(x)
-     
+        x = self.conv3(x)
+        x = F.relu(x)
+        x = self.conv4(x)
+        x =
