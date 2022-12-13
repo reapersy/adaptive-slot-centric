@@ -125,4 +125,6 @@ class Encoder(nn.Module):
         x = self.conv3(x)
         x = F.relu(x)
         x = self.conv4(x)
-        x =
+        x = F.relu(x)            
+        x = x.permute(0,2,3,1)
+        x = self.encoder_pos(x
