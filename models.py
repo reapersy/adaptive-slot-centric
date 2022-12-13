@@ -127,4 +127,9 @@ class Encoder(nn.Module):
         x = self.conv4(x)
         x = F.relu(x)            
         x = x.permute(0,2,3,1)
-        x = self.encoder_pos(x
+        x = self.encoder_pos(x)
+        return x
+
+
+class ResnetBlockFC(nn.Module):
+    ''' Fully connected ResNet B
