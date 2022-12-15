@@ -136,4 +136,8 @@ class ResnetBlockFC(nn.Module):
 
     Args:
         size_in (int): input dimension
-        size_out (in
+        size_out (int): output dimension
+        size_h (int): hidden dimension
+    '''
+
+    def __init__(self, size
