@@ -132,4 +132,8 @@ class Encoder(nn.Module):
 
 
 class ResnetBlockFC(nn.Module):
-    ''' Fully connected ResNet B
+    ''' Fully connected ResNet Block class.
+
+    Args:
+        size_in (int): input dimension
+        size_out (in
