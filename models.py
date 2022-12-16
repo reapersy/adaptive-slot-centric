@@ -140,4 +140,6 @@ class ResnetBlockFC(nn.Module):
         size_h (int): hidden dimension
     '''
 
-    def __init__(self, size
+    def __init__(self, size_in, size_out=None, size_h=None):
+        super(ResnetBlockFC, self).__init__()
+        #
