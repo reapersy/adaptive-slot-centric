@@ -144,4 +144,9 @@ class ResnetBlockFC(nn.Module):
         super(ResnetBlockFC, self).__init__()
         # Attributes
         if size_out is None:
-            size_out
+            size_out = size_in
+
+        if size_h is None:
+            size_h = min(size_in, size_out)
+
+        sel
