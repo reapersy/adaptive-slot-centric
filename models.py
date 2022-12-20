@@ -142,4 +142,6 @@ class ResnetBlockFC(nn.Module):
 
     def __init__(self, size_in, size_out=None, size_h=None):
         super(ResnetBlockFC, self).__init__()
-        #
+        # Attributes
+        if size_out is None:
+            size_out
