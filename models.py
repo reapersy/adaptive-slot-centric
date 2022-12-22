@@ -149,4 +149,7 @@ class ResnetBlockFC(nn.Module):
         if size_h is None:
             size_h = min(size_in, size_out)
 
-        sel
+        self.size_in = size_in
+        self.size_h = size_h
+        self.size_out = size_out
+        # Submodule
