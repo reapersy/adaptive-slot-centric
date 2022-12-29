@@ -154,4 +154,7 @@ class ResnetBlockFC(nn.Module):
         self.size_out = size_out
         # Submodules
         self.fc_0 = nn.Linear(size_in, size_h)
-        self.fc_1
+        self.fc_1 = nn.Linear(size_h, size_out)
+        self.actvn = nn.ReLU()
+
+       
