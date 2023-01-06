@@ -160,4 +160,5 @@ class ResnetBlockFC(nn.Module):
         if size_in == size_out:
             self.shortcut = None
         else:
-           
+            self.shortcut = nn.Linear(size_in, size_out, bias=False)
+        # In
