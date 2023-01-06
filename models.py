@@ -157,4 +157,7 @@ class ResnetBlockFC(nn.Module):
         self.fc_1 = nn.Linear(size_h, size_out)
         self.actvn = nn.ReLU()
 
-       
+        if size_in == size_out:
+            self.shortcut = None
+        else:
+           
