@@ -168,4 +168,6 @@ class ResnetBlockFC(nn.Module):
         net = self.fc_0(self.actvn(x))
         dx = self.fc_1(self.actvn(net))
 
-  
+        if self.shortcut is not None:
+            x_s = self.shortcut(x)
+       
