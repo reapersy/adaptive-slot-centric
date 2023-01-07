@@ -161,4 +161,8 @@ class ResnetBlockFC(nn.Module):
             self.shortcut = None
         else:
             self.shortcut = nn.Linear(size_in, size_out, bias=False)
-        # In
+        # Initialization
+        nn.init.zeros_(self.fc_1.weight)
+
+    def forward(self, x):
+        n
