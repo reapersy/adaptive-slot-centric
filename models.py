@@ -170,4 +170,12 @@ class ResnetBlockFC(nn.Module):
 
         if self.shortcut is not None:
             x_s = self.shortcut(x)
-       
+        else:
+            x_s = x
+
+        return x_s + dx
+
+
+
+
+class ImplicitMLP2DD
