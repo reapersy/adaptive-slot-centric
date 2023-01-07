@@ -178,4 +178,6 @@ class ResnetBlockFC(nn.Module):
 
 
 
-class ImplicitMLP2DD
+class ImplicitMLP2DDecoder(nn.Module):
+    ''' Decoder.
+        Instead of conditioning on global 
