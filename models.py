@@ -165,4 +165,7 @@ class ResnetBlockFC(nn.Module):
         nn.init.zeros_(self.fc_1.weight)
 
     def forward(self, x):
-        n
+        net = self.fc_0(self.actvn(x))
+        dx = self.fc_1(self.actvn(net))
+
+  
