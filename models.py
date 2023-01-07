@@ -183,4 +183,6 @@ class ImplicitMLP2DDecoder(nn.Module):
         Instead of conditioning on global features, on plane/volume local features.
 
     Args:
-        dim (int): in
+        dim (int): input dimension
+        c_dim (int): dimension of latent conditioned code c
+    
