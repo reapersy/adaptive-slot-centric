@@ -180,4 +180,7 @@ class ResnetBlockFC(nn.Module):
 
 class ImplicitMLP2DDecoder(nn.Module):
     ''' Decoder.
-        Instead of conditioning on global 
+        Instead of conditioning on global features, on plane/volume local features.
+
+    Args:
+        dim (int): in
