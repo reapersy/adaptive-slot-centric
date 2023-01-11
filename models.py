@@ -185,4 +185,5 @@ class ImplicitMLP2DDecoder(nn.Module):
     Args:
         dim (int): input dimension
         c_dim (int): dimension of latent conditioned code c
-    
+        hidden_size (int): hidden size of Decoder network
+        n
