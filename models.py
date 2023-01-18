@@ -188,4 +188,5 @@ class ImplicitMLP2DDecoder(nn.Module):
         hidden_size (int): hidden size of Decoder network
         n_blocks (int): number of blocks ResNetBlockFC layers
         leaky (bool): whether to use leaky ReLUs
-        sample_mode (str): sampling feature strategy
+        sample_mode (str): sampling feature strategy, bilinear|nearest
+        padding (float): conventional padding paramter of ONet for unit cub
