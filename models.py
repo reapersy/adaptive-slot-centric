@@ -189,4 +189,7 @@ class ImplicitMLP2DDecoder(nn.Module):
         n_blocks (int): number of blocks ResNetBlockFC layers
         leaky (bool): whether to use leaky ReLUs
         sample_mode (str): sampling feature strategy, bilinear|nearest
-        padding (float): conventional padding paramter of ONet for unit cub
+        padding (float): conventional padding paramter of ONet for unit cube, so [-0.5, 0.5] -> [-0.55, 0.55]
+    '''
+    def __init__(self, dim=2, c_dim=64,
+         
