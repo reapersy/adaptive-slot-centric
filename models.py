@@ -193,4 +193,6 @@ class ImplicitMLP2DDecoder(nn.Module):
     '''
     def __init__(self, dim=2, c_dim=64,
                  hidden_size=32, n_blocks=5, leaky=False, sample_mode='bilinear', padding=0.1, out_dim=1, grid_there = False, resolution=None):
-        super(ImplicitMLP2DDecoder, self).
+        super(ImplicitMLP2DDecoder, self).__init__()
+        print('Implicit Local Decoder...')
+        self.c_dim = c_d
