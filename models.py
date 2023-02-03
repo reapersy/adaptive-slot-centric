@@ -192,4 +192,4 @@ class ImplicitMLP2DDecoder(nn.Module):
         padding (float): conventional padding paramter of ONet for unit cube, so [-0.5, 0.5] -> [-0.55, 0.55]
     '''
     def __init__(self, dim=2, c_dim=64,
-         
+                 hidden_size=32, n_blocks=5, leaky=False, sample_mode='bilinear', padding=0.1, out
