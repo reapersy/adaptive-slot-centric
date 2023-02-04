@@ -195,4 +195,7 @@ class ImplicitMLP2DDecoder(nn.Module):
                  hidden_size=32, n_blocks=5, leaky=False, sample_mode='bilinear', padding=0.1, out_dim=1, grid_there = False, resolution=None):
         super(ImplicitMLP2DDecoder, self).__init__()
         print('Implicit Local Decoder...')
-        self.c_dim = c_d
+        self.c_dim = c_dim
+        self.n_blocks = n_blocks
+        self.hidden_size = hidden_size
+      
