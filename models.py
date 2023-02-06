@@ -199,4 +199,5 @@ class ImplicitMLP2DDecoder(nn.Module):
         self.n_blocks = n_blocks
         self.hidden_size = hidden_size
         self.xyz_grid = self.build_grid2D_imp(resolution)
-        self.
+        self.xyz_grid = self.xyz_grid*(resolution[0]-1 )
+        self.fc_p = nn.Linear(di
