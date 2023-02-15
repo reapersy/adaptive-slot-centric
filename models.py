@@ -220,4 +220,5 @@ class ImplicitMLP2DDecoder(nn.Module):
 
 
 
-    def
+    def build_grid2D_imp(self,resolution):
+        ranges = [np.linspace(0., 1., num=res) f
