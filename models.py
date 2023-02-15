@@ -221,4 +221,5 @@ class ImplicitMLP2DDecoder(nn.Module):
 
 
     def build_grid2D_imp(self,resolution):
-        ranges = [np.linspace(0., 1., num=res) f
+        ranges = [np.linspace(0., 1., num=res) for res in resolution]
+        grid = np.meshgrid(*ranges, sparse=
