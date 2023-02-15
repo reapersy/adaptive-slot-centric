@@ -214,3 +214,10 @@ class ImplicitMLP2DDecoder(nn.Module):
 
         self.out_dim = out_dim
         
+        self.actvn = F.relu
+
+        self.padding = padding
+
+
+
+    def
