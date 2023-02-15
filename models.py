@@ -224,4 +224,5 @@ class ImplicitMLP2DDecoder(nn.Module):
         ranges = [np.linspace(0., 1., num=res) for res in resolution]
         grid = np.meshgrid(*ranges, sparse=False, indexing="ij")
         grid = np.stack(grid, axis=-1)
-        grid = np.reshape(gri
+        grid = np.reshape(grid, [resolution[0], resolution[1], -1])
+        grid = np.expand_di
