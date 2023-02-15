@@ -208,3 +208,9 @@ class ImplicitMLP2DDecoder(nn.Module):
         ])
 
         self.blocks = nn.ModuleList([ResnetBlockFC(hidden_size) for i in range(n_blocks)])
+
+
+        self.fc_out = nn.Linear(hidden_size, out_dim)
+
+        self.out_dim = out_dim
+        
