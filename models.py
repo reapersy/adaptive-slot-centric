@@ -225,4 +225,6 @@ class ImplicitMLP2DDecoder(nn.Module):
         grid = np.meshgrid(*ranges, sparse=False, indexing="ij")
         grid = np.stack(grid, axis=-1)
         grid = np.reshape(grid, [resolution[0], resolution[1], -1])
-        grid = np.expand_di
+        grid = np.expand_dims(grid, axis=0)
+        grid = grid.astype(np.float32)
+        return torch.from_numpy
