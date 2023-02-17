@@ -231,4 +231,7 @@ class ImplicitMLP2DDecoder(nn.Module):
 
 
     def forward(self, featmap):
-        B = featm
+        B = featmap.shape[0]
+
+        pcl_mem = self.xyz_grid
+        pcl_mem_ = pcl_mem.resha
