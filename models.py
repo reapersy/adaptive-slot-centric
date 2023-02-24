@@ -236,4 +236,6 @@ class ImplicitMLP2DDecoder(nn.Module):
         pcl_mem = self.xyz_grid
         pcl_mem_ = pcl_mem.reshape([1,-1,2]).repeat([B,1,1])
         pcl_norm = (pcl_mem_/self.resolution[0]) -0.5
-     
+            
+        net = self.fc_p(pcl_norm)
+        c = featmap.unsqueeze(dim=1).repeat(1
