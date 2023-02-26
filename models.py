@@ -241,4 +241,7 @@ class ImplicitMLP2DDecoder(nn.Module):
         c = featmap.unsqueeze(dim=1).repeat(1,pcl_norm.shape[1],1)
 
         for i in range(self.n_blocks):
-            n
+            net = net + self.fc_c[i](c)
+            net = self.blocks[i](net)
+
+ 
