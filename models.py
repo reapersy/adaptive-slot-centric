@@ -244,4 +244,5 @@ class ImplicitMLP2DDecoder(nn.Module):
             net = net + self.fc_c[i](c)
             net = self.blocks[i](net)
 
- 
+        out = self.fc_out(self.actvn(net)).permute(0,2,1)
+        out 
