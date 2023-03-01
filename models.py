@@ -245,4 +245,5 @@ class ImplicitMLP2DDecoder(nn.Module):
             net = self.blocks[i](net)
 
         out = self.fc_out(self.actvn(net)).permute(0,2,1)
-        out 
+        out = out.reshape(B, self.out_dim, self.resolution[0], self.resolution[1])        
+    
