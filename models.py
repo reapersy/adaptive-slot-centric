@@ -255,4 +255,6 @@ class OccLoss(nn.Module):
     def __init__(self):
         super().__init__()
 
-    def forward(self, gt_vox_grid, p_vox_grids, steps=0, fix_p
+    def forward(self, gt_vox_grid, p_vox_grids, steps=0, fix_pos_weight=0.0):
+        pos_examples = torch.sum(gt_vox_grid)
+        neg_ex
