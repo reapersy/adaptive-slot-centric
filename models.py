@@ -253,4 +253,6 @@ class ImplicitMLP2DDecoder(nn.Module):
 class OccLoss(nn.Module):
 
     def __init__(self):
-        super().
+        super().__init__()
+
+    def forward(self, gt_vox_grid, p_vox_grids, steps=0, fix_p
