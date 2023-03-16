@@ -260,4 +260,7 @@ class OccLoss(nn.Module):
         neg_examples = gt_vox_grid.numel() - pos_examples
         pos_weight = (neg_examples+ 1)/(pos_examples+ 1)
 
-        criterion = torch.nn.BCEWithLogitsLoss(pos_weight=pos_weight.det
+        criterion = torch.nn.BCEWithLogitsLoss(pos_weight=pos_weight.detach())
+        prob_loss = criterion(p_vox_grids,gt_vox_grid)
+
+     
