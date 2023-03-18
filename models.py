@@ -263,4 +263,7 @@ class OccLoss(nn.Module):
         criterion = torch.nn.BCEWithLogitsLoss(pos_weight=pos_weight.detach())
         prob_loss = criterion(p_vox_grids,gt_vox_grid)
 
-     
+        return prob_loss
+
+def pack_seqdim(tensor, B):
+    shapelist = lis
