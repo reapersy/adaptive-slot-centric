@@ -266,4 +266,7 @@ class OccLoss(nn.Module):
         return prob_loss
 
 def pack_seqdim(tensor, B):
-    shapelist = lis
+    shapelist = list(tensor.shape)
+    B_, S = shapelist[:2]
+    assert(B==B_)
+    otherdims = 
