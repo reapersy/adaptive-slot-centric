@@ -275,4 +275,8 @@ def pack_seqdim(tensor, B):
 
 def unpack_seqdim(tensor, B):
     shapelist = list(tensor.shape)
-    BS = shape
+    BS = shapelist[0]
+    assert(BS%B==0)
+    otherdims = shapelist[1:]
+    S = int(BS/B)
+    t
