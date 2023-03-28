@@ -273,4 +273,6 @@ def pack_seqdim(tensor, B):
     tensor = torch.reshape(tensor, [B*S]+otherdims)
     return tensor
 
-def unpack_se
+def unpack_seqdim(tensor, B):
+    shapelist = list(tensor.shape)
+    BS = shape
