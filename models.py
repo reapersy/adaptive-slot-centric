@@ -269,4 +269,8 @@ def pack_seqdim(tensor, B):
     shapelist = list(tensor.shape)
     B_, S = shapelist[:2]
     assert(B==B_)
-    otherdims = 
+    otherdims = shapelist[2:]
+    tensor = torch.reshape(tensor, [B*S]+otherdims)
+    return tensor
+
+def unpack_se
