@@ -279,4 +279,10 @@ def unpack_seqdim(tensor, B):
     assert(BS%B==0)
     otherdims = shapelist[1:]
     S = int(BS/B)
-    t
+    tensor = torch.reshape(tensor, [B,S]+otherdims)
+    return tensor
+
+
+
+
+class Mode
