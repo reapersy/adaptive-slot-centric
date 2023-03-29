@@ -285,4 +285,6 @@ def unpack_seqdim(tensor, B):
 
 
 
-class Mode
+class ModelIter(nn.Module):
+    def __init__(self, opt):
+        super(ModelIter, self)._
