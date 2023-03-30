@@ -287,4 +287,7 @@ def unpack_seqdim(tensor, B):
 
 class ModelIter(nn.Module):
     def __init__(self, opt):
-        super(ModelIter, self)._
+        super(ModelIter, self).__init__()
+        self.device = "cuda"
+        self.opt = opt
+        feat_dim
