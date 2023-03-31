@@ -290,4 +290,7 @@ class ModelIter(nn.Module):
         super(ModelIter, self).__init__()
         self.device = "cuda"
         self.opt = opt
-        feat_dim
+        feat_dim = opt.feat_dim
+        input_dim = opt.input_dim
+
+        resolution = [opt.ima
