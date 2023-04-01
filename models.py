@@ -293,4 +293,5 @@ class ModelIter(nn.Module):
         feat_dim = opt.feat_dim
         input_dim = opt.input_dim
 
-        resolution = [opt.ima
+        resolution = [opt.image_height,opt.image_width]
+        self.encoder_cnn = Encoder(resolutio
