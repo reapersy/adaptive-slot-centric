@@ -309,4 +309,8 @@ class ModelIter(nn.Module):
             dim=slot_featdim,
             iters = num_iterations,
             eps = 1e-8, 
-            hidden
+            hidden_dim = slot_featdim)
+        
+        decoder_dim = opt.feat_dim
+
+        self.decode
