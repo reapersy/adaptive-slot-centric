@@ -304,4 +304,6 @@ class ModelIter(nn.Module):
         self.do_tta = opt.do_tta
         self.num_slots = num_slots
 
-     
+        self.slot_attention = SlotAttention(
+            num_slots=num_slots,
+            dim=sl
