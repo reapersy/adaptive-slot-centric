@@ -297,4 +297,7 @@ class ModelIter(nn.Module):
         self.encoder_cnn = Encoder(resolution, feat_dim, input_dim)
 
         slot_featdim = opt.feat_dim
-        num
+        num_slots = opt.num_slots
+
+        num_iterations = opt.num_iterations
+
