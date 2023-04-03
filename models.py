@@ -301,3 +301,7 @@ class ModelIter(nn.Module):
 
         num_iterations = opt.num_iterations
 
+        self.do_tta = opt.do_tta
+        self.num_slots = num_slots
+
+     
