@@ -306,4 +306,7 @@ class ModelIter(nn.Module):
 
         self.slot_attention = SlotAttention(
             num_slots=num_slots,
-            dim=sl
+            dim=slot_featdim,
+            iters = num_iterations,
+            eps = 1e-8, 
+            hidden
