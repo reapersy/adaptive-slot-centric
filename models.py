@@ -313,4 +313,6 @@ class ModelIter(nn.Module):
         
         decoder_dim = opt.feat_dim
 
-        self.decoder_cnn = ImplicitMLP2DDecoder(c_dim=decoder_dim, n_blocks=4,hidden_size=d
+        self.decoder_cnn = ImplicitMLP2DDecoder(c_dim=decoder_dim, n_blocks=4,hidden_size=decoder_dim, out_dim=opt.decoder_num_blocks,resolution=resolution).cuda()
+
+      
