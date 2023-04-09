@@ -319,4 +319,7 @@ class ModelIter(nn.Module):
 
         self.occ_loss = OccLoss()
 
-      
+        self.hungarianMatcher = HungarianMatcher()
+
+    def forward(self, feed, step):
+     
