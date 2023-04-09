@@ -315,4 +315,8 @@ class ModelIter(nn.Module):
 
         self.decoder_cnn = ImplicitMLP2DDecoder(c_dim=decoder_dim, n_blocks=4,hidden_size=decoder_dim, out_dim=opt.decoder_num_blocks,resolution=resolution).cuda()
 
+        self.mse_loss = nn.MSELoss()
+
+        self.occ_loss = OccLoss()
+
       
