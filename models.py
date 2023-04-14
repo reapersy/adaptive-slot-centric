@@ -325,4 +325,8 @@ class ModelIter(nn.Module):
         total_loss = torch.tensor(0.0).cuda()
 
         __p = lambda x: pack_seqdim(x, B)
+        __u = lambda x: unpack_seqdim(x, B)
+        
+
+        rgb_image =  feed['image']
    
