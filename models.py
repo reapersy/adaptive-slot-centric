@@ -322,4 +322,7 @@ class ModelIter(nn.Module):
         self.hungarianMatcher = HungarianMatcher()
 
     def forward(self, feed, step):
-     
+        total_loss = torch.tensor(0.0).cuda()
+
+        __p = lambda x: pack_seqdim(x, B)
+   
