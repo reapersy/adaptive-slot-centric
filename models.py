@@ -329,4 +329,7 @@ class ModelIter(nn.Module):
         
 
         rgb_image =  feed['image']
+        seg_image = feed['gt_mask']
+        gt_indices = feed['gt_indices']
+
    
