@@ -332,4 +332,8 @@ class ModelIter(nn.Module):
         seg_image = feed['gt_mask']
         gt_indices = feed['gt_indices']
 
-   
+        vis_dict = {}
+
+        B = rgb_image.shape[0]
+
+        total_loss = torch.tensor(
