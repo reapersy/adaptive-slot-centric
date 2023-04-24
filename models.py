@@ -336,4 +336,7 @@ class ModelIter(nn.Module):
 
         B = rgb_image.shape[0]
 
-        total_loss = torch.tensor(
+        total_loss = torch.tensor(0.0).cuda()
+
+        if step % self.opt.log_freq == 0:
+            vis_dict["g
