@@ -340,4 +340,5 @@ class ModelIter(nn.Module):
 
         if step % self.opt.log_freq == 0:
             vis_dict["gt_rgb"] =  wandb.Image(rgb_image[:1] +0.5, caption="input RGB image")
-   
+            gt_mask_vis = utils.summ_instance_masks(seg_image[0].squeeze())
+            vis_dict["gt
