@@ -344,4 +344,6 @@ class ModelIter(nn.Module):
             vis_dict["gt_mask"] = wandb.Image(gt_mask_vis[:1] + 0.5, caption="input GT mask")
 
         input_feats  = self.encoder_cnn(rgb_image)
-        input_feats_ = inpu
+        input_feats_ = input_feats.flatten(1,2)
+
+        slots, all_attn, all_attn_slot = self.slot
