@@ -346,4 +346,7 @@ class ModelIter(nn.Module):
         input_feats  = self.encoder_cnn(rgb_image)
         input_feats_ = input_feats.flatten(1,2)
 
-        slots, all_attn, all_attn_slot = self.slot
+        slots, all_attn, all_attn_slot = self.slot_attention(input_feats_)
+        slots_ = __p(slots)
+
+        rgb
