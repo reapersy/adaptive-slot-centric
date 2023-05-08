@@ -350,4 +350,9 @@ class ModelIter(nn.Module):
         slots_ = __p(slots)
 
         rgb_mask_ = self.decoder_cnn(slots_)
-        rgb_mask = __u(rgb_mask_).permute(0,1,3,4,2
+        rgb_mask = __u(rgb_mask_).permute(0,1,3,4,2)
+
+
+        masks = rgb_mask[:,:,...,3:]
+        recons = rgb_mask[:,:,...,:3]
+    
