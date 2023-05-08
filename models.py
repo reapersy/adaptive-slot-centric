@@ -349,4 +349,5 @@ class ModelIter(nn.Module):
         slots, all_attn, all_attn_slot = self.slot_attention(input_feats_)
         slots_ = __p(slots)
 
-        rgb
+        rgb_mask_ = self.decoder_cnn(slots_)
+        rgb_mask = __u(rgb_mask_).permute(0,1,3,4,2
