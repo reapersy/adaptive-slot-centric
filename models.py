@@ -355,4 +355,5 @@ class ModelIter(nn.Module):
 
         masks = rgb_mask[:,:,...,3:]
         recons = rgb_mask[:,:,...,:3]
-    
+        pred_masks = nn.Softmax(dim=1)(masks)
+        recon_combined = torch.
