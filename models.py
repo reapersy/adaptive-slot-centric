@@ -357,4 +357,6 @@ class ModelIter(nn.Module):
         recons = rgb_mask[:,:,...,:3]
         pred_masks = nn.Softmax(dim=1)(masks)
         recon_combined = torch.sum(recons * pred_masks, dim=1)  # Recombine image.
-        recon_combined = recon_c
+        recon_combined = recon_combined.permute(0,3,1,2)                        
+
+        rgb_loss = self.mse_loss(re
