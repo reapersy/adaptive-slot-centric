@@ -360,4 +360,7 @@ class ModelIter(nn.Module):
         recon_combined = recon_combined.permute(0,3,1,2)                        
 
         rgb_loss = self.mse_loss(recon_combined, rgb_image)
-        rgb_loss = rgb_loss * self.opt.rgb_l
+        rgb_loss = rgb_loss * self.opt.rgb_loss_coeff
+        vis_dict["reconstruction_loss"] = rgb_loss
+    
+        tota
