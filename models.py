@@ -366,4 +366,6 @@ class ModelIter(nn.Module):
         total_loss = total_loss + rgb_loss
 
         # log mask and rgb
-        pred_mask_v
+        pred_mask_vis = utils.summ_instance_masks(pred_masks[0].squeeze(),pred=True)
+
+        if step % self.op
