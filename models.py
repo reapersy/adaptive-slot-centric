@@ -368,4 +368,6 @@ class ModelIter(nn.Module):
         # log mask and rgb
         pred_mask_vis = utils.summ_instance_masks(pred_masks[0].squeeze(),pred=True)
 
-        if step % self.op
+        if step % self.opt.log_freq == 0:
+            vis_dict["pred_rgb"] = wandb.Image(
+                rec
