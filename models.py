@@ -363,4 +363,7 @@ class ModelIter(nn.Module):
         rgb_loss = rgb_loss * self.opt.rgb_loss_coeff
         vis_dict["reconstruction_loss"] = rgb_loss
     
-        tota
+        total_loss = total_loss + rgb_loss
+
+        # log mask and rgb
+        pred_mask_v
