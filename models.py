@@ -371,4 +371,5 @@ class ModelIter(nn.Module):
         if step % self.opt.log_freq == 0:
             vis_dict["pred_rgb"] = wandb.Image(
                 recon_combined[:1] + 0.5, caption="pred RGB image")
-            vis_dict["pred_
+            vis_dict["pred_mask"] = wandb.Image(
+                pred_mask_vis[:1] + 0.5, caption="pr
