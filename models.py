@@ -372,4 +372,8 @@ class ModelIter(nn.Module):
             vis_dict["pred_rgb"] = wandb.Image(
                 recon_combined[:1] + 0.5, caption="pred RGB image")
             vis_dict["pred_mask"] = wandb.Image(
-                pred_mask_vis[:1] + 0.5, caption="pr
+                pred_mask_vis[:1] + 0.5, caption="pred mask")
+
+
+        # segmentation loss
+        gt_mask = seg_image.unsqu
