@@ -379,4 +379,5 @@ class ModelIter(nn.Module):
         gt_mask = seg_image.unsqueeze(2)
         pred_masks = pred_masks.squeeze(-1).unsqueeze(2)
 
-        pre
+        pred_masks = pred_masks.flatten(2,4)
+        pred_height = int(pred_masks.shape[-
