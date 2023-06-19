@@ -376,4 +376,7 @@ class ModelIter(nn.Module):
 
 
         # segmentation loss
-        gt_mask = seg_image.unsqu
+        gt_mask = seg_image.unsqueeze(2)
+        pred_masks = pred_masks.squeeze(-1).unsqueeze(2)
+
+        pre
