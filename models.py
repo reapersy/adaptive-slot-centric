@@ -385,4 +385,6 @@ class ModelIter(nn.Module):
         gt_mask = gt_mask.reshape(pred_masks.shape)
         gt_mask = gt_mask*gt_indices.unsqueeze(-1)
 
-        gt_mask_neg = (1.0
+        gt_mask_neg = (1.0-gt_mask)*gt_indices.unsqueeze(-1)
+        num_pos_classes = torch.sum(gt_mask)
+   
