@@ -383,4 +383,6 @@ class ModelIter(nn.Module):
         pred_height = int(pred_masks.shape[-1]**0.5)
         
         gt_mask = gt_mask.reshape(pred_masks.shape)
-       
+        gt_mask = gt_mask*gt_indices.unsqueeze(-1)
+
+        gt_mask_neg = (1.0
