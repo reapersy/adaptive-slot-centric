@@ -391,4 +391,6 @@ class ModelIter(nn.Module):
 
         pos_weight = num_neg_classes/(num_pos_classes+1e-6)
         gt_mask_w = gt_mask*pos_weight
-        total_w = gt_mask_w + gt_ma
+        total_w = gt_mask_w + gt_mask_neg
+        
+        new_indices = self.hungarianMatcher(gt_mask
