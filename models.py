@@ -393,4 +393,6 @@ class ModelIter(nn.Module):
         gt_mask_w = gt_mask*pos_weight
         total_w = gt_mask_w + gt_mask_neg
         
-        new_indices = self.hungarianMatcher(gt_mask
+        new_indices = self.hungarianMatcher(gt_mask.squeeze(2),pred_masks, use_mm=True)
+
+        pred_mask_indices = torch.stack(new_indi
