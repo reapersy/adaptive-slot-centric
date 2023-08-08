@@ -389,4 +389,6 @@ class ModelIter(nn.Module):
         num_pos_classes = torch.sum(gt_mask)
         num_neg_classes = torch.sum(gt_mask_neg)
 
-        pos_weight = num_neg_classes/(n
+        pos_weight = num_neg_classes/(num_pos_classes+1e-6)
+        gt_mask_w = gt_mask*pos_weight
+        total_w = gt_mask_w + gt_ma
