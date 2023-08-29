@@ -395,4 +395,6 @@ class ModelIter(nn.Module):
         
         new_indices = self.hungarianMatcher(gt_mask.squeeze(2),pred_masks, use_mm=True)
 
-        pred_mask_indices = torch.stack(new_indi
+        pred_mask_indices = torch.stack(new_indices,0)[:,1].flatten()
+        gt_mask_indices = torch.stack(new_indices,0)[:,0].flatten()
+        
