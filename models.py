@@ -397,4 +397,7 @@ class ModelIter(nn.Module):
 
         pred_mask_indices = torch.stack(new_indices,0)[:,1].flatten()
         gt_mask_indices = torch.stack(new_indices,0)[:,0].flatten()
-        batch_indices = torch.arange(B).unsqueeze(1).repeat(1, self.num_slots).
+        batch_indices = torch.arange(B).unsqueeze(1).repeat(1, self.num_slots).flatten()
+        
+        
+        gt_mask_ra = gt_mask[batch_indices, gt_mask_
