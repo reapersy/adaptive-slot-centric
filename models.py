@@ -400,4 +400,5 @@ class ModelIter(nn.Module):
         batch_indices = torch.arange(B).unsqueeze(1).repeat(1, self.num_slots).flatten()
         
         
-        gt_mask_ra = gt_mask[batch_indices, gt_mask_
+        gt_mask_ra = gt_mask[batch_indices, gt_mask_indices].reshape([B, self.num_slots,-1])
+        total_w_ra = total_w[batch_indices, 
