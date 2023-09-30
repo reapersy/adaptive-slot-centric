@@ -401,4 +401,5 @@ class ModelIter(nn.Module):
         
         
         gt_mask_ra = gt_mask[batch_indices, gt_mask_indices].reshape([B, self.num_slots,-1])
-        total_w_ra = total_w[batch_indices, 
+        total_w_ra = total_w[batch_indices, gt_mask_indices].reshape([B, self.num_slots,-1])
+        pred_masks_ra = pred_masks[batc
