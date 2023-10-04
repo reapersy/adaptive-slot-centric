@@ -403,4 +403,6 @@ class ModelIter(nn.Module):
         gt_mask_ra = gt_mask[batch_indices, gt_mask_indices].reshape([B, self.num_slots,-1])
         total_w_ra = total_w[batch_indices, gt_mask_indices].reshape([B, self.num_slots,-1])
         pred_masks_ra = pred_masks[batch_indices, pred_mask_indices].reshape([B, self.num_slots,-1])
-        criterion_occ = nn.BCELoss(re
+        criterion_occ = nn.BCELoss(reduction='none')
+
+        mask_occ_loss = criterion_occ(pred_masks_ra, gt_
