@@ -405,4 +405,6 @@ class ModelIter(nn.Module):
         pred_masks_ra = pred_masks[batch_indices, pred_mask_indices].reshape([B, self.num_slots,-1])
         criterion_occ = nn.BCELoss(reduction='none')
 
-        mask_occ_loss = criterion_occ(pred_masks_ra, gt_
+        mask_occ_loss = criterion_occ(pred_masks_ra, gt_mask_ra)
+        mask_occ_loss = mask_occ_loss*total_w_ra
+      
