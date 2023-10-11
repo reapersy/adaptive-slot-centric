@@ -408,4 +408,6 @@ class ModelIter(nn.Module):
         mask_occ_loss = criterion_occ(pred_masks_ra, gt_mask_ra)
         mask_occ_loss = mask_occ_loss*total_w_ra
         mask_occ_loss = torch.sum(mask_occ_loss)/(torch.sum(total_w_ra) +1e-6)     
-   
+        
+        if not self.do_tta:
+            mask_occ_loss = mask_occ_loss * s
