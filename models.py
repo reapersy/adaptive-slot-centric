@@ -410,4 +410,6 @@ class ModelIter(nn.Module):
         mask_occ_loss = torch.sum(mask_occ_loss)/(torch.sum(total_w_ra) +1e-6)     
         
         if not self.do_tta:
-            mask_occ_loss = mask_occ_loss * s
+            mask_occ_loss = mask_occ_loss * self.opt.mask_loss_coeff
+            vis_dict["segmentation_loss"] = mask_occ_loss
+ 
