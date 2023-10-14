@@ -416,4 +416,4 @@ class ModelIter(nn.Module):
 
         
         # ari segmentation metrics
-      
+        gt_mask_ra_ari = gt_mask_ra.reshape(gt_mask_ra.shape[0],gt_mask_ra.shape[1],-1).permute(0,2,
