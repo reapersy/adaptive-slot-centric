@@ -422,4 +422,7 @@ class ModelIter(nn.Module):
         fg_gt_mask_ra_ari = gt_mask_ra_ari[:,:,1:]
         fg_seg_scores = segmentation_metric.adjusted_rand_index(fg_gt_mask_ra_ari, pred_masks_ra_ari)
         fg_seg_scores = torch.tensor([score for score in  fg_seg_scores if score.isfinite()]).mean()
-  
+        vis_dict["fg_ari_score"] = fg_seg_scores
+        
+
+        seg_scores = segmentation
