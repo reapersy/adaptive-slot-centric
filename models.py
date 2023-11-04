@@ -426,4 +426,5 @@ class ModelIter(nn.Module):
         
 
         seg_scores = segmentation_metric.adjusted_rand_index(gt_mask_ra_ari, pred_masks_ra_ari)
-        seg_scores = torch.te
+        seg_scores = torch.tensor([score for score in  seg_scores if score.isfinite()]).mean()
+        
