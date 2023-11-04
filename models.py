@@ -425,4 +425,5 @@ class ModelIter(nn.Module):
         vis_dict["fg_ari_score"] = fg_seg_scores
         
 
-        seg_scores = segmentation
+        seg_scores = segmentation_metric.adjusted_rand_index(gt_mask_ra_ari, pred_masks_ra_ari)
+        seg_scores = torch.te
