@@ -9,4 +9,6 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
     This implementation ignores points with no cluster label in `true_mask` (i.e.
     those points for which `true_mask` is a zero vector). In the context of
     segmentation, that means this function can ignore points in an image
-    corresponding to the background (
+    corresponding to the background (i.e. not to an object).
+    Args:
+    true_mask: `Tensor` of shape [batch_size, n_p
