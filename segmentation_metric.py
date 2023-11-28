@@ -11,4 +11,6 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
     segmentation, that means this function can ignore points in an image
     corresponding to the background (i.e. not to an object).
     Args:
-    true_mask: `Tensor` of shape [batch_size, n_p
+    true_mask: `Tensor` of shape [batch_size, n_points, n_true_groups].
+      The true cluster assignment encoded as one-hot.
+    pr
