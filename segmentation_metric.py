@@ -13,4 +13,5 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
     Args:
     true_mask: `Tensor` of shape [batch_size, n_points, n_true_groups].
       The true cluster assignment encoded as one-hot.
-    pr
+    pred_mask: `Tensor` of shape [batch_size, n_points, n_pred_groups].
+  
