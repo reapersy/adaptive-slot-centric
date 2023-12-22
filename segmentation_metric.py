@@ -15,4 +15,5 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
       The true cluster assignment encoded as one-hot.
     pred_mask: `Tensor` of shape [batch_size, n_points, n_pred_groups].
       The predicted cluster assignment encoded as categorical probabilities.
-      This fu
+      This function works on the argmax over axis 2.
+    name: str. Name of this operati
