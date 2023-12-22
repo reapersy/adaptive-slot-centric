@@ -20,4 +20,5 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
     Returns:
     ARI scores as a tf.float32 `Tensor` of shape [batch_size].
     Raises:
-    ValueError: if n_points <= n_true_g
+    ValueError: if n_points <= n_true_groups and n_points <= n_pred_groups.
+      We've chosen not to handle the special cas
