@@ -18,4 +18,6 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
       This function works on the argmax over axis 2.
     name: str. Name of this operation (defaults to "ari_score").
     Returns:
-    ARI scores as a tf.float
+    ARI scores as a tf.float32 `Tensor` of shape [batch_size].
+    Raises:
+    ValueError: if n_points <= n_true_g
