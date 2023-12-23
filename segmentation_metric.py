@@ -22,4 +22,6 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
     Raises:
     ValueError: if n_points <= n_true_groups and n_points <= n_pred_groups.
       We've chosen not to handle the special cases that can occur when you have
-      one cluster per datapoint (which would be un
+      one cluster per datapoint (which would be unusual).
+    References:
+    Lawrence Hubert, Phipps Arabie. 1985. "Compa
