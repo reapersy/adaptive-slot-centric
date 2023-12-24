@@ -24,4 +24,6 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
       We've chosen not to handle the special cases that can occur when you have
       one cluster per datapoint (which would be unusual).
     References:
-    Lawrence Hubert, Phipps Arabie. 1985. "Compa
+    Lawrence Hubert, Phipps Arabie. 1985. "Comparing partitions"
+      https://link.springer.com/article/10.1007/BF01908075
+  
