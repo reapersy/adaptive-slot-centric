@@ -26,4 +26,6 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
     References:
     Lawrence Hubert, Phipps Arabie. 1985. "Comparing partitions"
       https://link.springer.com/article/10.1007/BF01908075
-  
+    Wikipedia
+      https://en.wikipedia.org/wiki/Rand_index
+    
