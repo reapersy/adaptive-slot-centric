@@ -28,4 +28,6 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
       https://link.springer.com/article/10.1007/BF01908075
     Wikipedia
       https://en.wikipedia.org/wiki/Rand_index
-    
+    Scikit Learn
+      http://scikit-learn.org/stable/modules/generated/\
+      sklear
