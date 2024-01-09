@@ -30,4 +30,6 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
       https://en.wikipedia.org/wiki/Rand_index
     Scikit Learn
       http://scikit-learn.org/stable/modules/generated/\
-      sklear
+      sklearn.metrics.adjusted_rand_score.html
+    """
+    _, n_points, n_true_groups = true_
