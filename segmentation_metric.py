@@ -36,4 +36,6 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
     n_pred_groups = pred_mask.shape[-1]
     if n_points <= n_true_groups and n_points <= n_pred_groups:
       # This rules out the n_true_groups == n_pred_groups == n_points
-      # corner case, and also n_true_groups == n_pred_groups ==
+      # corner case, and also n_true_groups == n_pred_groups == 0, since
+      # that would imply n_points == 0 too.
+      # The sklearn implem
