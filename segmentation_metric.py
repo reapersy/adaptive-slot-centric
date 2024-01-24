@@ -39,4 +39,5 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
       # corner case, and also n_true_groups == n_pred_groups == 0, since
       # that would imply n_points == 0 too.
       # The sklearn implementation has a corner-case branch which does
-      # handle this. We chose
+      # handle this. We chose not to support these cases to avoid counting
+      # distinct clusters just to che
