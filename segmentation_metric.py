@@ -42,4 +42,5 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
       # handle this. We chose not to support these cases to avoid counting
       # distinct clusters just to check if we have one cluster per datapoint.
       raise ValueError(
-        
+          "adjusted_rand_index requires n_groups < n_points. We don't handle "
+          "the spec
