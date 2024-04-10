@@ -48,4 +48,5 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
 
     true_group_ids = torch.argmax(true_mask, -1)
     pred_group_ids = torch.argmax(pred_mask, -1)
-    # We convert true and predicted clusters to one-hot ('oh'
+    # We convert true and predicted clusters to one-hot ('oh') representations.
+    true_mask_oh = true_mask.to(torch.float32)  # already one-
