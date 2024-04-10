@@ -45,3 +45,6 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
           "adjusted_rand_index requires n_groups < n_points. We don't handle "
           "the special cases that can occur when you have one cluster "
           "per datapoint.")
+
+    true_group_ids = torch.argmax(true_mask, -1)
+    pred_group_ids = torch.argm
