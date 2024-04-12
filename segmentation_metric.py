@@ -52,3 +52,4 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
     true_mask_oh = true_mask.to(torch.float32)  # already one-hot
     pred_mask_oh = F.one_hot(pred_group_ids, n_pred_groups)  # returns float32
 
+    n_points = torch.sum(true_mask_oh, axis=[1, 2]).to(torch.float32)
