@@ -55,4 +55,7 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
     n_points = torch.sum(true_mask_oh, axis=[1, 2]).to(torch.float32)
 
     nij = torch.einsum('bji,bjk->bki', pred_mask_oh.float(), true_mask_oh.float())
-  
+    a = torch.sum(nij, axis=1)
+    b = torch.sum(nij, axis=2)
+
+    rindex = tor
