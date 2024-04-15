@@ -58,4 +58,5 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
     a = torch.sum(nij, axis=1)
     b = torch.sum(nij, axis=2)
 
-    rindex = tor
+    rindex = torch.sum(nij * (nij - 1), axis=[1, 2])
+    aindex = torch.sum(a * (a - 1), axis
