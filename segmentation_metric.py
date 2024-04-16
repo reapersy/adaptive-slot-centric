@@ -63,4 +63,6 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
     bindex = torch.sum(b * (b - 1), axis=1)
     expected_rindex = aindex * bindex / (n_points*(n_points-1))
     max_rindex = (aindex + bindex) / 2
-    ari = 
+    ari = (rindex - expected_rindex) / (max_rindex - expected_rindex)
+
+    # The case w
