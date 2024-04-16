@@ -65,4 +65,5 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
     max_rindex = (aindex + bindex) / 2
     ari = (rindex - expected_rindex) / (max_rindex - expected_rindex)
 
-    # The case w
+    # The case where n_true_groups == n_pred_groups == 1 needs to be
+    # special-cased 
