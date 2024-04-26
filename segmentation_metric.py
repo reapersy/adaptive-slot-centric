@@ -67,4 +67,5 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
 
     # The case where n_true_groups == n_pred_groups == 1 needs to be
     # special-cased (to return 1) as the above formula gives a divide-by-zero.
-    # This might
+    # This might not work when true_mask has values that do not sum to one:
+    both_sing
