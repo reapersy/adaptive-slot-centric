@@ -70,4 +70,8 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
     # This might not work when true_mask has values that do not sum to one:
     both_single_cluster = torch.logical_and(
         _all_equal(true_group_ids), _all_equal(pred_group_ids))
-    return torch.where(both_single_cluster, torch.ones_like(ari)
+    return torch.where(both_single_cluster, torch.ones_like(ari), ari)
+
+
+def _all_equal(values):
+    """Whether values are all equal along the final axi
