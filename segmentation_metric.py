@@ -74,4 +74,6 @@ def adjusted_rand_index(true_mask, pred_mask, name='ari_score'):
 
 
 def _all_equal(values):
-    """Whether values are all equal along the final axi
+    """Whether values are all equal along the final axis."""
+    return (values == values[..., :1]).all(axis=-1)
+
