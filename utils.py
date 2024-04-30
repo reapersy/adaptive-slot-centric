@@ -33,3 +33,20 @@ def summ_instance_masks(masks,  pred=False):
     if pred:
         old_shape = masks.shape
         num_slots = masks.shape[0]
+        masks = torch.argmax(masks.reshape(masks.shape[0],-1).transpose(1,0),axis=-1)
+        masks = F.one_hot(masks,num_slots).float().transpose(1,0).reshape(old_shape)
+
+    num_slots_c = torch.sum(masks.sum([1,2])>0.0)
+
+    farthest_colors = plt.get_cmap("rainbow")([np.linspace(0, 1, num_slots_c)])[:,:,:3][0]
+    rgb_canvas = torch.ones([3,masks.shape[-2],masks.shape[-1]])
+    start_idx = 0
+    for index, mask in enumerate(masks):
+        if torch.sum(mask) > 0:
+            chosen_color = farthest_colors[start_idx].reshape([3,1])
+            start_idx += 1
+            indicies = torch.where(mask == 1.0)
+            rgb_canvas[:,indicies[0],indicies[1]] = torch.from_numpy(chosen_color).float()
+    rgb_canvas = rgb_canvas - 0.5
+    rgb_canvas = rgb_canvas.unsqueeze(0)
+    return rgb_canvas
