@@ -10,4 +10,6 @@
 <img src="images/slot-tta_model_fig.png" alt="Model figure"/>
 
 
-<!-
+<!-- DESCRIPTION -->
+## Abstract
+This repository contains the source code for the experimenta
