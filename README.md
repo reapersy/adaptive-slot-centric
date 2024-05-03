@@ -12,4 +12,4 @@
 
 <!-- DESCRIPTION -->
 ## Abstract
-This repository contains the source code for the experimenta
+This repository contains the source code for the experimental adaptation of a semi-supervised instance segmentation model, which seeks t
