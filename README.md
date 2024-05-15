@@ -12,4 +12,8 @@
 
 <!-- DESCRIPTION -->
 ## Abstract
-This repository contains the source code for the experimental adaptation of a semi-supervised instance segmentation model, which seeks to improve its performance by adapting to out-of-distribution scenes. The model leverages slot-centric generative models in the process of adaptation. We provide detailed instructions on how to install and use the model, as well as cod
+This repository contains the source code for the experimental adaptation of a semi-supervised instance segmentation model, which seeks to improve its performance by adapting to out-of-distribution scenes. The model leverages slot-centric generative models in the process of adaptation. We provide detailed instructions on how to install and use the model, as well as code for conducting 2D RGB experiments.
+
+## Code
+### Installation
+We use Pytorch 2.
