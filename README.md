@@ -16,4 +16,5 @@ This repository contains the source code for the experimental adaptation of a se
 
 ## Code
 ### Installation
-We use Pytorch 2.0 for all our experiments. We use [wandb](https://wandb.ai/) for logging the
+We use Pytorch 2.0 for all our experiments. We use [wandb](https://wandb.ai/) for logging the results.
+Install conda (instructions [here](https://docs.conda.io/e
