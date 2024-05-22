@@ -20,4 +20,7 @@ We use Pytorch 2.0 for all our experiments. We use [wandb](https://wandb.ai/) fo
 Install conda (instructions [here](https://docs.conda.io/en/latest/miniconda.html)).
 Create a conda environment using the below commands:
 ```
-conda 
+conda create -n slot_tta python=3.8.5
+conda activate slot_tta
+```
+Install the required pip pack
