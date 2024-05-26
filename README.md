@@ -23,4 +23,8 @@ Create a conda environment using the below commands:
 conda create -n slot_tta python=3.8.5
 conda activate slot_tta
 ```
-Install the required pip pack
+Install the required pip packages using the below command:
+```
+pip install -r requirement.txt
+```
+### Trainin
