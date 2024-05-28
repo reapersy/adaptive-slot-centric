@@ -34,4 +34,5 @@ python main.py +experiment=clevr_train
 ```
 
 
-### Test-Time Adaptat
+### Test-Time Adaptation Code
+In order to load with your own checkpoint, simply update the `
