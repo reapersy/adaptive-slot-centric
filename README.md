@@ -27,4 +27,11 @@ Install the required pip packages using the below command:
 ```
 pip install -r requirement.txt
 ```
-### Trainin
+### Training Code
+
+```
+python main.py +experiment=clevr_train
+```
+
+
+### Test-Time Adaptat
