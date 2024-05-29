@@ -35,4 +35,5 @@ python main.py +experiment=clevr_train
 
 
 ### Test-Time Adaptation Code
-In order to load with your own checkpoint, simply update the `
+In order to load with your own checkpoint, simply update the `load_folder` variable as shown below.
+For intermediate TTA result visualization, set `deep_t
