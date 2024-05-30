@@ -46,4 +46,7 @@ python main.py +experiment=clevrtex_tta load_folder=checkpoint/clevr_train/check
 <!-- CITATION -->
 ## Citation
 
-If you find 
+If you find this work useful in your research, please cite:
+
+```bibtex
+@inproce
