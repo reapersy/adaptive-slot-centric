@@ -39,4 +39,11 @@ In order to load with your own checkpoint, simply update the `load_folder` varia
 For intermediate TTA result visualization, set `deep_tta_vis` variable to True
 
 ```
-python main.py +experiment=clevrtex_tta load_fold
+python main.py +experiment=clevrtex_tta load_folder=checkpoint/clevr_train/checkpoint.pt
+```
+
+
+<!-- CITATION -->
+## Citation
+
+If you find 
