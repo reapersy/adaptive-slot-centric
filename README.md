@@ -51,4 +51,8 @@ If you find this work useful in your research, please cite:
 ```bibtex
 @inproceedings{prabhudesai2022test,
 title={Test-time Adaptation with Slot-Centric Models},
-author={Prabhudesai, Mihir and Goyal, Anirudh and Paul, Sujoy and van Steenkiste, Sjoerd and Sajjadi, Mehdi SM and Aggarwal, Gaurav and Kipf, Thomas and Pathak, Deepak and Fr
+author={Prabhudesai, Mihir and Goyal, Anirudh and Paul, Sujoy and van Steenkiste, Sjoerd and Sajjadi, Mehdi SM and Aggarwal, Gaurav and Kipf, Thomas and Pathak, Deepak and Fragkiadaki, Katerina},
+journal={arXiv preprint arXiv:2203.11194},
+year={2022}
+}
+```
